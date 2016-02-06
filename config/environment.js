@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'expert-search',
+    podModulePrefix: 'expert-search/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
