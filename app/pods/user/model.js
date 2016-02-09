@@ -5,5 +5,6 @@ const { attr } = DS;
 export default DS.Model.extend({
   name: attr('string'),
   url: attr('string'),
-  shortUrl: attr('string')
+  shortUrl: attr('string'),
+  friendsIds: attr()
 });
