@@ -1,18 +1,36 @@
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Website</th>
-      <th scope="col">Connections</th>
-    </tr>
-  </thead>
-  <tbody>
-  {{#each model as |user|}}
-    <tr>
-      <th scope="row">{{user.name}}</th>
-      <td>{{user.short_url}}</td>
-      <td>3</td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
+<h4 class="grid">Add new expert</h4>
+
+<div class="grid">
+  <div class="centered grid__col--8">
+    {{users/components/new-user-form createUser="createUser" newName=newName newUrl=newUrl}}
+  </div>
+</div>
+
+<h4 class="grid">Experts</h4>
+
+<div class="grid">
+  <div class="centered grid__col--8">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Website</th>
+          <th scope="col">Connections</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |user|}}
+          <tr>
+            <td scope="row">{{user.name}}</td>
+            <td>
+              <a href="{{user.shortUrl}}" target="_blank">
+                {{user.shortUrl}}
+              </a>
+            </td>
+            <td>3</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
