@@ -75,11 +75,21 @@ table {
 }
 
 thead th {
+  font-size: em(14px);
   text-align: center;
   text-transform: uppercase;
   font-weight: $font-weight--medium;
   background: palette(grey, dark);
   color: $white;
+  &:first-child {
+    border-radius: $br--default 0 0 0;
+  }
+  &:last-child {
+    border-radius: 0 $br--default 0 0;
+  }
+  &:only-child {
+    border-radius: $br--default $br--default 0 0;
+  }
 }
 
 tr {
@@ -91,10 +101,22 @@ tr:nth-child(even) {
   background: palette(grey, x-light);
 }
 
+tr:last-child td {
+  &:first-child {
+    border-radius: 0 0 0 $br--default;
+  }
+  &:last-child {
+    border-radius: 0 0 $br--default 0;
+  }
+  &:only-child {
+    border-radius: 0 0 $br--default $br--default;
+  }
+}
+
 th,
 td {
   text-align: center;
-  padding: 20px;
+  padding: 15px 20px;
   font-weight: $font-weight--light;
 }
 
