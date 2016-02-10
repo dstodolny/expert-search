@@ -5,5 +5,5 @@
   <label class="form__label--hidden" for="website">Website:</label>
   {{input class="form__input" type="url" id="website" placeholder="http://website.com" value=newUrl}}
 
-  <button class="btn--default" {{action "createUser" on="click"}} disabled={{notValid}}>Add new expert</button>
+  <button class="btn--default" {{action "createUser" on="click"}} disabled={{isDisabled}}>Add new expert</button>
 </form>

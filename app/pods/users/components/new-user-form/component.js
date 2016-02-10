@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   newName: null,
   newUrl: null,
   isValid: computed.and('newName', 'newUrl'),
-  notValid: computed.not('isValid'),
+  isDisabled: computed.not('isValid'),
   actions: {
     createUser() {
       this.sendAction('createUser');
