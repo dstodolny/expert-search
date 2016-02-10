@@ -1,1 +1,51 @@
-{{model.name}}
+<h4 class="grid">Expert</h4>
+
+<div class="grid">
+  <div class="centered grid__col--8">
+    <h1 class="headline-primary--grouped">{{model.name}}</h1>
+    <h2 class="headline-secondary--grouped">
+      <a href="{{model.shortUrl}}" target="_blank">{{model.shortUrl}}</a>
+    </h2>
+  </div>
+</div>
+
+<h4 class="grid">Headers</h4>
+
+<div class="grid">
+  <div class="centered grid__col--8">
+    <ul>
+    {{#each model.headers as |header|}}
+      <li>{{header.content}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
+
+<h4 class="grid">Connections</h4>
+
+<div class="grid">
+  <div class="centered grid__col--8">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Website</th>
+          <th scope="col">Connections</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model.friends as |friend|}}
+          <tr>
+            <td scope="row">{{#link-to 'user' friend.id}}{{friend.name}}{{/link-to}}</td>
+            <td>
+              <a href="{{friend.shortUrl}}" target="_blank">
+                {{friend.shortUrl}}
+              </a>
+            </td>
+            <td>{{friend.friends.length}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
