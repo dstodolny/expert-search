@@ -21,7 +21,7 @@
       <tbody>
         {{#each model as |user|}}
           <tr>
-            <td scope="row">{{user.name}}</td>
+            <td scope="row">{{#link-to 'user' user.id}}{{user.name}}{{/link-to}}</td>
             <td>
               <a href="{{user.shortUrl}}" target="_blank">
                 {{user.shortUrl}}
