@@ -1,0 +1,30 @@
+$ember-power-select-background-color: palette(grey, xx-light);
+$ember-power-select-text-color: palette(black, dark);
+$ember-power-select-line-height: 2.8;
+$ember-power-select-default-border: inherit;
+$ember-power-select-highlighted-background: $color-primary;
+$ember-power-select-number-of-visible-options: 5;
+$ember-power-select-default-border-radius: $br--default;
+$ember-power-select-option-padding: 15px;
+$ember-power-select-trigger-ltr-padding: 0 16px 0 15px;
+@import "../ember-power-select";
+
+.ember-power-select {
+  font-size: em(18px);
+  margin-bottom: em(20px, 18px);
+  font-weight: $font-weight--light;
+  border-bottom: 3px solid palette(grey, x-light);
+  border-radius: $br--default;
+}
+
+.ember-power-select-search input {
+  background: $white;
+  padding: 0 10px;
+  width: 96.9%;
+  border: 0;
+
+  &:focus {
+    border: 1px solid $color-primary;
+    border-radius: $br--default;
+  }
+}
