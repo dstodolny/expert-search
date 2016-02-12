@@ -10,7 +10,7 @@ export default Controller.extend({
         url: this.get('newUrl'),
       });
       user.save().then((user) => {
-        this.store.findRecord('user', user.get('id'), { reload: true })
+        this.store.findRecord('user', user.get('id'), { reload: true });
       }).catch((error) => {
         console.log(error);
       }).finally(() => {
