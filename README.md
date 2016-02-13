@@ -11,7 +11,7 @@ Expert Search is a simple expert search tool that allows you to add and search f
 - Viewing an actual expert displays the name, website URL, shortening, website headings, and links to their connected experts' pages.
 - Looking at someone's profile, you can query for experts in the application who write about a certain topic that are not already in direct connection with the viewed person. Results shows the **path of introduction** from the viewed person to the expert.
 
-*Alan wants to get introduced to someone who writes about 'Dog breeding'. Claudia's website has a heading tag "Dog breeding in Ukraine". Bart knows Alan and Claudia. An example search result would be Alan -> Bart -> Claudia ("Dog breeding in Ukraine").*
+ *Alan wants to get introduced to someone who writes about 'Dog breeding'. Claudia's website has a heading tag "Dog breeding in Ukraine". Bart knows Alan and Claudia. An example search result would be Alan -> Bart -> Claudia ("Dog breeding in Ukraine").*
 
 ## Live demo
 If you would like to see a working demo, go [here](https://radiant-dawn-97399.herokuapp.com/)
