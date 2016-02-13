@@ -3,7 +3,6 @@ import Ember from 'ember';
 const { Controller } = Ember;
 
 export default Controller.extend({
-  pathOfIntroduction: [],
   selectOptions: Ember.computed('model', 'selected', function() {
     return this.get('store').query('user', {
       'user_id': this.get('model.id'),
@@ -42,7 +41,10 @@ export default Controller.extend({
         'for_path': true,
         q: this.get('topic')
       }).then(users => {
+        this.set('topic', null);
         this.get('pathOfIntroduction').pushObjects(users.toArray());
+      }).catch((error) => {
+        console.log(error);
       });
     }
   }
