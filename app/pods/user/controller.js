@@ -3,7 +3,8 @@ import Ember from 'ember';
 const { Controller } = Ember;
 
 export default Controller.extend({
-  options: Ember.computed('model', 'selected', function() {
+  pathOfIntroduction: [],
+  selectOptions: Ember.computed('model', 'selected', function() {
     return this.get('store').query('user', {
       'user_id': this.get('model.id'),
       'for_select': true
@@ -32,6 +33,16 @@ export default Controller.extend({
         this.store.findRecord('user', this.get('model.id'), { reload: true });
       }).catch((error) => {
         console.log(error);
+      });
+    },
+    showPathOfIntroduction() {
+      this.get('pathOfIntroduction').clear();
+      this.get('store').query('user', {
+        'user_id': this.get('model.id'),
+        'for_path': true,
+        q: this.get('topic')
+      }).then(users => {
+        this.get('pathOfIntroduction').pushObjects(users.toArray());
       });
     }
   }

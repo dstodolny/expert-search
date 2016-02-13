@@ -31,10 +31,13 @@
   <div class="centered grid__col--8">
     <form class="form">
       <label class="form__label--hidden" for="topic">Topic:</label>
-      {{input class="form__input" type="text" id="topic" placeholder="Topic" value=newName}}
+      {{input class="form__input" type="text" id="topic" placeholder="Topic" value=topic}}
 
-      <button class="btn--default">Find path</button>
+      <button class="btn--default" {{action "showPathOfIntroduction" on="click"}}>Find path</button>
     </form>
+    {{#each pathOfIntroduction as |user|}}
+      <h3>{{#link-to 'user' user.id}}{{user.name}}{{/link-to}}</h3>
+    {{/each}}
   </div>
 </div>
 
@@ -46,7 +49,7 @@
       {{#power-select
         search=(action "userQueryChanged")
         selected=selected
-        options=options
+        options=selectOptions
         placeholder="Select name"
         onchange=(action (mut selected))
         as |user|
