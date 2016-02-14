@@ -41,7 +41,6 @@ export default Controller.extend({
         'for_path': true,
         q: this.get('topic')
       }).then(users => {
-        this.set('topic', null);
         this.get('pathOfIntroduction').pushObjects(users.toArray());
       }).catch((error) => {
         console.log(error);

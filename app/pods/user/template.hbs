@@ -35,9 +35,19 @@
 
       <button class="btn--default" {{action "showPathOfIntroduction" on="click"}}>Find path</button>
     </form>
-    {{#each pathOfIntroduction as |user|}}
-      <h3>{{#link-to 'user' user.id}}{{user.name}}{{/link-to}}</h3>
-    {{/each}}
+    {{#if pathOfIntroduction}}
+      <p>
+        {{#each pathOfIntroduction as |user index|}}
+          {{#link-to 'user' user.id}}{{user.name}}{{/link-to}}
+            {{#unless index}}
+              knows
+            {{else}}
+              who knows
+            {{/unless}}
+        {{/each}}
+          about <i>{{topic}}</i>
+      </p>
+    {{/if}}
   </div>
 </div>
 
